@@ -12,7 +12,7 @@ A model that could accurately estimate immune cell composition from phenotypic a
 ##Relevent Tools & Data
 
 * [Cibersort](https://cibersort.stanford.edu/)
-* [ImmQuant] (http://csgi.tau.ac.il/ImmQuant/)
+* [ImmQuant](http://csgi.tau.ac.il/ImmQuant/)
 * [x-cell](http://xcell.ucsf.edu/)
 * [imSig](https://cran.r-project.org/web/packages/imsig/index.html)
 
