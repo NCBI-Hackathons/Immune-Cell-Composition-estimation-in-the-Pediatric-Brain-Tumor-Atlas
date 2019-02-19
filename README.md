@@ -9,7 +9,7 @@ The Pediatric Brain Tumor Atlas is a concerted multi-institution effort by the C
 A model that could accurately estimate immune cell composition from phenotypic and diagnostic information could help to characterize tumors which could be used for prognostic and therapeutic purposes. Additionally, understanding how immune cell composition is related to mutations and cancer pathways in pediatric tumors can give us a better understanding of biology of these tumors and how to treat them. 
 
 
-##Relevent Tools & Data
+## Relevent Tools & Data
 
 * [Cibersort](https://cibersort.stanford.edu/)
 * [ImmQuant](http://csgi.tau.ac.il/ImmQuant/)
@@ -18,7 +18,7 @@ A model that could accurately estimate immune cell composition from phenotypic a
 
 
 
-##Relevent Publications
+## Relevent Publications
 
 * [Immune cell profiling in cancer: molecular approaches to cell-specific identification](https://www.nature.com/articles/s41698-017-0031-0)
 * [Profiling Tumor Infiltrating Immune Cells with CIBERSORT.](https://www.ncbi.nlm.nih.gov/pubmed/29344893)
