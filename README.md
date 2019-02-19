@@ -28,3 +28,12 @@ A model that could accurately estimate immune cell composition from phenotypic a
 * [Bulk tissue cell type deconvolution with multi-subject single-cell expression reference](https://www.nature.com/articles/s41467-018-08023-x)
 * [Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumors](http://cancerimmunolres.aacrjournals.org/content/6/11/1388)
 
+## Data Access
+https://docs.google.com/document/d/1GvNZZxYSZauWJrChoq8vQAjHmGHpzPzSrYyjxQfNMiE/edit
+or
+https://drive.google.com/drive/u/0/folders/1KsaatILhTPNCZdDWAtioWB7bfLMmDDWg
+or
+https://pedcbioportal.org/study?id=5c0593f0e4b0185134fb4de8#summary
+
+**Please register with [pedcbioportal](https://pedcbioportal.org/) before downloading data**
+
