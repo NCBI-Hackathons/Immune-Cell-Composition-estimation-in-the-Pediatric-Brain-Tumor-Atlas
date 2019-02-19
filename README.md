@@ -29,11 +29,9 @@ A model that could accurately estimate immune cell composition from phenotypic a
 * [Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumors](http://cancerimmunolres.aacrjournals.org/content/6/11/1388)
 
 ## Data Access
-https://docs.google.com/document/d/1GvNZZxYSZauWJrChoq8vQAjHmGHpzPzSrYyjxQfNMiE/edit
-or
-https://drive.google.com/drive/u/0/folders/1KsaatILhTPNCZdDWAtioWB7bfLMmDDWg
-or
-https://pedcbioportal.org/study?id=5c0593f0e4b0185134fb4de8#summary
+* https://docs.google.com/document/d/1GvNZZxYSZauWJrChoq8vQAjHmGHpzPzSrYyjxQfNMiE/edit
+* https://drive.google.com/drive/u/0/folders/1KsaatILhTPNCZdDWAtioWB7bfLMmDDWg
+* https://pedcbioportal.org/study?id=5c0593f0e4b0185134fb4de8#summary
 
 **Please register with [pedcbioportal](https://pedcbioportal.org/) before downloading data**
 
