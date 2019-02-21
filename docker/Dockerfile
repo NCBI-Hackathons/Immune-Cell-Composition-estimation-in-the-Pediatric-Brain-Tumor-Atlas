@@ -7,6 +7,12 @@ COPY . /usr/local/src/myscripts
 # Set the working directory to /myscripts
 WORKDIR /usr/local/src/myscripts
 
+# Install knitr and required dependencies
+RUN Rscript -e "install.packages('knitr', dependencies = TRUE)"
+
+# Install ggplot2
+RUN Rscript -e "install.packages('ggplot2')"
+
 # Uncomment and update the line below for runnning Rscripts
 # CMD ["Rscript", "myscript.R"]
 
