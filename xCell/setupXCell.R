@@ -1,4 +1,6 @@
 install.packages("devtools")
 install.packages("BiocManager")
+BiocManager::install("GSEABase", version = "3.8")
+BiocManager::install("GSVA", version = "3.8")
 options(unzip = "internal")
 devtools::install_github('dviraran/xCell')
