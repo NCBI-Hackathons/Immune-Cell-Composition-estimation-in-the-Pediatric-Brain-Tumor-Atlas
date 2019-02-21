@@ -1,5 +1,17 @@
-library("optparse")
+#################################################
+#Purpose: Shallow wrapper to call xCell with selected parameters
+#Date: 2/21/2019
+#Author: Spencer Kelley
+#################################################
 
+#Libraries
+library("optparse")
+library("xCell")
+
+
+#################################################
+#Parse CLI Arguments
+#################################################
 option_list = list(
   make_option(c("-i", "--input"), type="character", default=NULL, 
               help="dataset file name", metavar="in.txt"),
@@ -17,6 +29,12 @@ if (is.null(opt$input) || is.null(opt$out)){
   stop("Input and output must be supplied", call.=FALSE)
 }
 
-library(xCell)
+
+##########################################################
+#Read input
+##########################################################
 exprMatrix = read.table(opt$input,header=TRUE,row.names=1, as.is=TRUE)
+##########################################################
+#Run analysis to generate output
+##########################################################
 xCellAnalysis(exprMatrix, file.name = opt$output, parallel.sz = opt$threads, parallel.type = FORK, rnaseq = TRUE)
