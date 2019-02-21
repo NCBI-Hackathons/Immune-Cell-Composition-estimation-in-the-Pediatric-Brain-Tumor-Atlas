@@ -1,20 +1,46 @@
+FROM ubuntu
+
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libssh2-1-dev \
+    libxml2-dev
+
 # Official R runtime
 FROM r-base
 
 # Copy the current directory contents into /myscripts 
-COPY . /usr/local/src/myscripts
+#COPY . /usr/local/src/myscripts
 
 # Set the working directory to /myscripts
-WORKDIR /usr/local/src/myscripts
+#WORKDIR /usr/local/src/myscripts
 
 # Install knitr and required dependencies
-RUN Rscript -e "install.packages('knitr', dependencies = TRUE)"
+RUN Rscript -e "install.packages('knitr')"
 
 # Install tidyverse and required dependencies
-RUN Rscript -e "install.packages('tidyverse', dependencies = TRUE)"
+RUN Rscript -e "install.packages('tidyverse')"
 
 # Install ggplot2
-RUN Rscript -e "install.packages('ggplot2', dependencies = TRUE)"
+RUN Rscript -e "install.packages('ggplot2')"
+
+# Install devtools
+RUN Rscript -e "install.packages('devtools')"
+
+# Install devtools additionals
+RUN Rscript -e "devtools::install_github('dviraran/xCell')"
+
+# Install BiocManager
+RUN Rscript -e "install.packages('BiocManager')"
+
+# Install BiocManager additionals
+RUN Rscript -e "BiocManager::install('GSEABase', version = '3.8')"
+RUN Rscript -e "BiocManager::install('GSVA', version = '3.8')"
+
+# Install OptParse
+
+RUN Rscript -e "install.packages('optparse')"
+
 
 
 
