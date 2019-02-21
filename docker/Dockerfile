@@ -10,9 +10,16 @@ WORKDIR /usr/local/src/myscripts
 # Install knitr and required dependencies
 RUN Rscript -e "install.packages('knitr', dependencies = TRUE)"
 
-# Install ggplot2
-RUN Rscript -e "install.packages('ggplot2')"
+# Install tidyverse and required dependencies
+RUN Rscript -e "install.packages('tidyverse', dependencies = TRUE)"
 
+# Install ggplot2
+RUN Rscript -e "install.packages('ggplot2', dependencies = TRUE)"
+
+
+
+
+#### Additional examples below this line.
 # Uncomment and update the line below for runnning Rscripts
 # CMD ["Rscript", "myscript.R"]
 
