@@ -1,10 +1,15 @@
 FROM ubuntu
 
+ENV TZ American/Los_Angeles
+
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     libcurl4-openssl-dev \
     libssh2-1-dev \
-    libxml2-dev
+    libxml2-dev \
+    r-base \
+    r-base-dev \
+    r-recommended
 
 # Official R runtime
 FROM r-base
@@ -25,7 +30,7 @@ RUN Rscript -e "install.packages('tidyverse')"
 RUN Rscript -e "install.packages('ggplot2')"
 
 # Install devtools
-RUN Rscript -e "install.packages('devtools')"
+RUN Rscript -e "install.packages('devtools', dependencies = TRUE)"
 
 # Install devtools additionals
 RUN Rscript -e "devtools::install_github('dviraran/xCell')"
