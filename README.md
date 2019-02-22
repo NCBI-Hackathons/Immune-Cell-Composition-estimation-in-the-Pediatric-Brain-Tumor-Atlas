@@ -21,6 +21,9 @@ A model that could accurately estimate immune cell composition from phenotypic a
 * [Docker](https://www.docker.com/why-docker)
 
 
+## Results
+![alt text](https://github.com/NCBI-Hackathons/Immune-Cell-Composition-estimation-in-the-Pediatric-Brain-Tumor-Atlas/blob/master/images/cor10.svg)
+
 ## Relevant Publications
 
 * [Immune cell profiling in cancer: molecular approaches to cell-specific identification](https://www.nature.com/articles/s41698-017-0031-0)
