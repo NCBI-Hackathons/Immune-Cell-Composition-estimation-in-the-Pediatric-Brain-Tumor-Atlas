@@ -79,7 +79,7 @@ masterComparisonUnivariate <- function(matDF=NULL, imcDF=NULL)
 		{	
 			myP <- numAnalysisMatix(myCol);
 		}
-		if(is.character(myCol))
+		if(!is.numeric(myCol))
 		{	
 			myP <- catAnalysisMatix(myCol);
 		}
