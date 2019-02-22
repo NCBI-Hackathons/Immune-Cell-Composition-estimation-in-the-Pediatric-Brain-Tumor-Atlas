@@ -128,5 +128,5 @@ for(var in names(actual_results)){
     labs(color='Actual Value') + theme_minimal()
  i <- i+1
 }
-ggarrange(plotlist = plot_list)
+ggarrange(plotlist = plot_list) +ggtitle('Permutation test of Immune Cell Composition-Clinical feature Correlation')
 
