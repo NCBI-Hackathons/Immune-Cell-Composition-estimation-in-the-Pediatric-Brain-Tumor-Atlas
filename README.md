@@ -22,6 +22,17 @@ A model that could accurately estimate immune cell composition from phenotypic a
 
 
 ## Results
+
+We found found a high degree of correlation between  cancer type and immune cell composition
+
+### Pairwise correlation between Different Cancer types and Immune cells
+![alt text](https://github.com/NCBI-Hackathons/Immune-Cell-Composition-estimation-in-the-Pediatric-Brain-Tumor-Atlas/blob/master/images/CANCER_TYPE_BarPlot_PValues.png)
+
+### Detected abundunce of immune cells 
+![alt text] (https://github.com/NCBI-Hackathons/Immune-Cell-Composition-estimation-in-the-Pediatric-Brain-Tumor-Atlas/blob/master/images/imSigResultPlots.png)
+
+
+
 ![alt text](https://github.com/NCBI-Hackathons/Immune-Cell-Composition-estimation-in-the-Pediatric-Brain-Tumor-Atlas/blob/master/images/cor10.svg)
 
 ## Relevant Publications
