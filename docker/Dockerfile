@@ -8,12 +8,14 @@ RUN apt-get update && apt-get install -y \
     libssh2-1-dev \
     libxml2-dev
 
+# Setup Data Volume
+VOLUME ["/data"]
+
 # Copy the current directory contents into /myscripts 
 #COPY . /usr/local/src/myscripts
 
 # Set the working directory to /myscripts
 WORKDIR /usr/local/src/app
-
 
 # Official R runtime
 #FROM r-base:3.5.2
@@ -27,6 +29,9 @@ RUN Rscript -e "install.packages('tidyverse')"
 
 # Install ggplot2
 RUN Rscript -e "install.packages('ggplot2')"
+
+# Install ggpubr
+RUN Rscript -e "install.packages('ggpubr')"
 
 # Install devtools
 RUN Rscript -e "install.packages('devtools')"
