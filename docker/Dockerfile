@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 ENV TZ American/Los_Angeles
 
@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssh2-1-dev \
     libxml2-dev \
-    libnetcdf-dev
+    netcdf-bin \
+    libnetcdf-dev \
+    r-cran-ncdf4
 
 # Setup Data Volume
 VOLUME ["/data"]
@@ -38,7 +40,6 @@ RUN Rscript -e "install.packages('ggpubr', version = '0.2')"
 RUN Rscript -e "install.packages('devtools', version = '2.0.1')"
 
 # Install BiocManager
-ARG CACHEBUST=1
 RUN Rscript -e "install.packages('BiocManager', version = '1.30.4')"
 
 # Install BiocManager additionals
@@ -50,7 +51,7 @@ RUN Rscript -e "BiocManager::install('GSVA', version = '3.8')"
 RUN Rscript -e "install.packages('optparse', version = '1.6.1')"
 
 # Install devtools additionals
-RUN Rscript -e "devtools::install_github('dviraran/xCell')"
+RUN Rscript -e "devtools::install_github('dviraran/xCell@1.12')"
 
 # Install imsig
 RUN Rscript -e "install.packages('imsig', version = '1.0.0')"
