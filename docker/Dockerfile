@@ -35,6 +35,9 @@ RUN Rscript -e "install.packages('ggplot2', version = '3.1.0')"
 # Install ggpubr
 RUN Rscript -e "install.packages('ggpubr', version = '0.2')"
 
+# Install quadprog
+RUN Rscript -e "install.packages('quadprog', version = '1.5-5')"
+
 # Install devtools
 RUN Rscript -e "install.packages('devtools', version = '2.0.1')"
 
