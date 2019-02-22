@@ -5,7 +5,9 @@ option_list = list(
   make_option(c("-i", "--input"), type="character", default=NULL,
               help="dataset file name", metavar="in.txt"),
   make_option(c("-o", "--out"), type="character", default=NULL, 
-              help="output file name", metavar="out.txt")
+              help="output file name", metavar="out.txt"),
+  make_option(c("-f", "--figures"), type="character", default=NULL, 
+              help="Figure outputs file name", metavar="out.png")
 );
 
 opt_parser = OptionParser(option_list=option_list);
@@ -18,6 +20,7 @@ if (is.null(opt$input) || is.null(opt$out)){
 
 exp = read.table(opt$input, header = T, row.names = 1, sep = '\t')
 plot <- plot_abundance(exp = exp, r = 0.7)
-ggplot2::ggsave(paste(opt$output, ".png", sep = ""), plot = plot)
+plot
+ggplot2::ggsave(opt$figures)
 output <- imsig(exp = exp, r = 0.7)
 write.table(output, opt$out, sep="\t", row.names=T)
