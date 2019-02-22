@@ -25,7 +25,7 @@ library("tidyverse");
 library("ggpubr")
 
 #Read in data
-imcDF <- read.delim(args[1], stringsAsFactors=F)
+imcDF <- read.delim(args[1], stringsAsFactors=F, check.names=F)
 matDF <- read.delim(args[2], stringsAsFactors=F, row.names=1)
 
 ###########################################
