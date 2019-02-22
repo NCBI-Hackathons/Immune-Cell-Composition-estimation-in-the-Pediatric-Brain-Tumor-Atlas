@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:jessie
 
 ENV TZ American/Los_Angeles
 
@@ -6,19 +6,18 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libcurl4-openssl-dev \
     libssh2-1-dev \
-    libxml2-dev \
-    r-base \
-    r-base-dev \
-    r-recommended
-
-# Official R runtime
-FROM r-base
+    libxml2-dev
 
 # Copy the current directory contents into /myscripts 
 #COPY . /usr/local/src/myscripts
 
 # Set the working directory to /myscripts
-#WORKDIR /usr/local/src/myscripts
+WORKDIR /usr/local/src/app
+
+
+# Official R runtime
+#FROM r-base:3.5.2
+FROM rocker/tidyverse:3.5.2
 
 # Install knitr and required dependencies
 RUN Rscript -e "install.packages('knitr')"
@@ -30,12 +29,10 @@ RUN Rscript -e "install.packages('tidyverse')"
 RUN Rscript -e "install.packages('ggplot2')"
 
 # Install devtools
-RUN Rscript -e "install.packages('devtools', dependencies = TRUE)"
-
-# Install devtools additionals
-RUN Rscript -e "devtools::install_github('dviraran/xCell')"
+RUN Rscript -e "install.packages('devtools')"
 
 # Install BiocManager
+ARG CACHEBUST=1
 RUN Rscript -e "install.packages('BiocManager')"
 
 # Install BiocManager additionals
@@ -45,6 +42,9 @@ RUN Rscript -e "BiocManager::install('GSVA', version = '3.8')"
 # Install OptParse
 
 RUN Rscript -e "install.packages('optparse')"
+
+# Install devtools additionals
+RUN Rscript -e "devtools::install_github('dviraran/xCell')"
 
 
 
