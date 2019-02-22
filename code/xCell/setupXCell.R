@@ -1,6 +1,0 @@
-install.packages("devtools")
-install.packages("BiocManager")
-install.packages("optparse")
-BiocManager::install("GSEABase", version = "3.8")
-BiocManager::install("GSVA", version = "3.8")
-devtools::install_github('dviraran/xCell')
