@@ -53,7 +53,7 @@ RUN Rscript -e "BiocManager::install('GSVA', version = '3.8')"
 RUN Rscript -e "install.packages('optparse', version = '1.6.1')"
 
 # Install devtools additionals
-RUN Rscript -e "devtools::install_github('dviraran/xCell@1.12')"
+RUN Rscript -e "devtools::install_github('dviraran/xCell@c03d448402051a95e330fcd921430d424eb5952f')"
 
 # Install imsig
 RUN Rscript -e "install.packages('imsig', version = '1.0.0')"
