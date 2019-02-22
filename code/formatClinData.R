@@ -14,7 +14,7 @@ args <- commandArgs(trailingOnly = TRUE)
 library("tidyverse");
 
 #Read in data
-clinData <- read.delim("../../pbta/data/formatted/ClinData.txt");
+clinData <- read.delim(args[1]);
 myDups <- data.frame(table(clinData[,"SAMPLE_ID"]));
 clinData <- merge(clinData, myDups, by.x="SAMPLE_ID", by.y="Var1")
 
@@ -36,4 +36,5 @@ clinData[,"CANCER_TYPE_DETAILED"] <- ifelse(clinData[,"Freq"]>1, clinData[,"CANC
 clinData <- clinData[1:19];
 clinData <- unique(clinData);
 rownames(clinData) <- clinData[,"SAMPLE_ID"]
-write.table(clinData, paste(gsub("\\.txt", "", args[1]), "formatted.txt", sep=""), col.names=T, row.names=T, sep="\t");
+write.table(clinData, paste(gsub("\\.txt", "", args[1]), "formatted.txt", sep=""), col.names=T, row.names=T, sep="\t")
+
