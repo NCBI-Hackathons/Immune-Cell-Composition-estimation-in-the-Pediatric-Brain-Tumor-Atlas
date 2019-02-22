@@ -25,8 +25,8 @@ library("tidyverse");
 library("ggpubr")
 
 #Read in data
-imcDF <- read.delim(args[1], stringsAsFactors=F, check.names=F)
-matDF <- read.delim(args[2], stringsAsFactors=F, row.names=1)
+matDF <- read.delim(args[1], stringsAsFactors=F)
+imcDF <- read.delim(args[2], stringsAsFactors=F, check.names=F)
 
 ###########################################
 #Make sure column and rownames are the same
@@ -102,7 +102,9 @@ write.table(myOut, paste(args[3], "/PvalTable.txt", sep=""), sep="\t", row.names
 myOutTS <- myOut;
 myOutTS[,"Variable"] <- rownames(myOutTS);
 myOutTS <- gather(myOutTS, key="ImmCell", value="pval", -Variable);
-myOutTS[,"sig"] <- ifelse(myOutTS[,"pval"]<0.01, "<0.01", "Not Significant")
+myOutTS <- myOutTS %>% mutate(qval=p.adjust(pval, method = 'BH'), 
+                              sig= ifelse(qval<0.01, "<0.01", "Not Significant"))
+
 myVars <- unique(myOutTS[,"Variable"])
 for(i in 1:length(myVars))
 {
