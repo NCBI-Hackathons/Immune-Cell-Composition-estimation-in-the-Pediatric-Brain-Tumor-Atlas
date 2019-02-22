@@ -18,6 +18,6 @@ if (is.null(opt$input) || is.null(opt$out)){
 
 exp = read.table(opt$input, header = T, row.names = 1, sep = '\t')
 plot <- plot_abundance(exp = exp, r = 0.7)
-ggplot2::ggsave(opt$output + ".png", plot = plot)
+ggplot2::ggsave(paste(opt$output, ".png", sep = ""), plot = plot)
 output <- imsig(exp = exp, r = 0.7)
 write.table(output, opt$out, sep="\t", row.names=T)
