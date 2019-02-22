@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 ENV TZ American/Los_Angeles
 
@@ -38,7 +38,6 @@ RUN Rscript -e "install.packages('ggpubr', version = '0.2')"
 RUN Rscript -e "install.packages('devtools', version = '2.0.1')"
 
 # Install BiocManager
-ARG CACHEBUST=1
 RUN Rscript -e "install.packages('BiocManager', version = '1.30.4')"
 
 # Install BiocManager additionals
@@ -50,7 +49,7 @@ RUN Rscript -e "BiocManager::install('GSVA', version = '3.8')"
 RUN Rscript -e "install.packages('optparse', version = '1.6.1')"
 
 # Install devtools additionals
-RUN Rscript -e "devtools::install_github('dviraran/xCell')"
+RUN Rscript -e "devtools::install_github('dviraran/xCell@1.12')"
 
 # Install imsig
 RUN Rscript -e "install.packages('imsig', version = '1.0.0')"
