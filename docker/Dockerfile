@@ -39,7 +39,7 @@ RUN Rscript -e "install.packages('devtools', version = '2.0.1')"
 
 # Install BiocManager
 ARG CACHEBUST=1
-RUN Rscript -e "install.packages('BiocManager, version = '1.30.4')"
+RUN Rscript -e "install.packages('BiocManager', version = '1.30.4')"
 
 # Install BiocManager additionals
 RUN Rscript -e "BiocManager::install('GSEABase', version = '3.8')"
