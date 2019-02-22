@@ -17,7 +17,6 @@ if (is.null(opt$input) || is.null(opt$out)){
 }
 
 exp = read.table(opt$input, header = T, row.names = 1, sep = '\t')
-imsig(exp = exp, r = 0.7)
 plot_abundance(exp = exp, r = 0.7)
 output <- imsig(exp = exp, r = 0.7)
 write.table(output, opt$out, sep="\t", row.names=T)
