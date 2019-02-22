@@ -55,10 +55,6 @@ RUN Rscript -e "devtools::install_github('dviraran/xCell@1.12')"
 # Install imsig
 RUN Rscript -e "install.packages('imsig', version = '1.0.0')"
 
-
-
-sudo R CMD INSTALL ncdf4_1.13.tar.gz --configure-args="--with-nc-config=/home/ubuntu/miniconda3/bin/nc-config"
-
 #### Additional examples below this line.
 # Uncomment and update the line below for runnning Rscripts
 # CMD ["Rscript", "myscript.R"]
