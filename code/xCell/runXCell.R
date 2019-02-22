@@ -15,7 +15,7 @@ library("xCell")
 option_list = list(
   make_option(c("-i", "--input"), type="character", default=NULL, 
               help="dataset file name", metavar="in.txt"),
-  make_option(c("-o", "--out"), type="character", default=NULL, 
+  make_option(c("-o", "--output"), type="character", default=NULL, 
               help="output file name", metavar="out.txt"),
   make_option(c("-t", "--threads"), type="integer", default=4, 
               help="number of threads to use", metavar="4")
@@ -24,7 +24,7 @@ option_list = list(
 opt_parser = OptionParser(option_list=option_list);
 opt = parse_args(opt_parser);
 
-if (is.null(opt$input) || is.null(opt$out)){
+if (is.null(opt$input) || is.null(opt$output)){
   print_help(opt_parser)
   stop("Input and output must be supplied", call.=FALSE)
 }
